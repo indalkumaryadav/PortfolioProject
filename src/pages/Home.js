@@ -48,22 +48,10 @@ const Home = () => {
                 marginTop: 50,
               }}
             >
-              <Link to="Contact" smooth={true} duration={500}>
-                <Button
-                  style={{
-                    backgroundColor: "red",
-                    color: "white",
-                    textTransform: "capitalize",
-                    fontSize: 16,
-                  }}
-                >
-                  Contact Me
-                </Button>
-              </Link>
-
               <Button
                 style={{
-                  backgroundColor: "#005f99",
+                  backgroundColor: "red",
+                  width: 150,
                   textTransform: "capitalize",
                 }}
               >

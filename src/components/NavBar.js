@@ -138,7 +138,10 @@ const NavBar = () => {
       <Drawer open={open} onClose={() => setOpen(false)}>
         <div className={classes.drawer}>
           <IconButton>
-            <Avatar src={AvatarSVG} style={{ width: 150, height: 150 }} />
+            <Avatar
+              src={"https://avatars.githubusercontent.com/u/73450527?v=4"}
+              style={{ width: 150, height: 150 }}
+            />
           </IconButton>
           <Divider />
           <List component="nav" aria-label="main mailbox folders">

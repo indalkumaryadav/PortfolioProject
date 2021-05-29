@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Avatar, Grid, IconButton, Typography } from "@material-ui/core";
 import React from "react";
 import AvatarSVG from "../images/avatar.svg";
 
@@ -11,7 +11,12 @@ const About = () => {
       className="About"
     >
       <Grid item md={6}>
-        <img src={AvatarSVG} style={{ width: "100%", height: 300 }} />
+        <IconButton>
+          <Avatar
+            src="https://avatars.githubusercontent.com/u/73450527?v=4"
+            style={{ width: "300px", height: 300 }}
+          />
+        </IconButton>
       </Grid>
       <Grid item md={6}>
         <div style={{ marginTop: 40 }}>
