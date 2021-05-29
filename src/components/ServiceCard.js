@@ -1,4 +1,10 @@
-import { Card, CardContent, Typography } from "@material-ui/core";
+import {
+  Avatar,
+  Card,
+  CardContent,
+  IconButton,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 
@@ -11,11 +17,13 @@ const CardDiv = styled(Card)`
   }
 `;
 
-const ServiceCard = ({ Icon, title, description }) => {
+const ServiceCard = ({ image, title, description }) => {
   return (
     <CardDiv>
       <CardContent>
-        <Icon style={{ fontSize: 50 }} />
+        <IconButton>
+          <Avatar src={image} style={{ height: 70, width: 70 }} />
+        </IconButton>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="body2" component="p">
           {description}

@@ -10,8 +10,17 @@ import React from "react";
 import ContactSVG from "../images/contact.svg";
 
 const Contact = () => {
+  const onSubmit = (data) => {
+    window.Email.send({
+      SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812",
+      To: data.email,
+      From: "you@isp.com",
+      Subject: "This is the subject",
+      Body: "And this is the body" + data.firstname,
+    });
+  };
   return (
-    <Paper style={{ marginTop: 20 }}>
+    <Paper style={{ marginTop: 20 }} className="Contact">
       <Grid container spacing={3}>
         <Grid item md={6}>
           <Container
@@ -25,7 +34,7 @@ const Contact = () => {
           />
         </Grid>
         <Grid item md={6}>
-          <form style={{ padding: 8 }}>
+          <form style={{ padding: 8 }} onSubmit={onSubmit}>
             <TextField
               fullWidth
               variant="outlined"

@@ -16,6 +16,9 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AvatarSVG from "../images/avatar.svg";
+import * as Scroll from "react-scroll";
+import { useHistory } from "react-router";
+let Link = Scroll.Link;
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -58,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const history = useHistory();
   return (
     <>
       <CssBaseline />
@@ -71,36 +75,56 @@ const NavBar = () => {
                 marginRight: 16,
                 fontSize: 16,
               }}
+              onClick={() => history.push("/")}
             >
               Home
             </Button>
-            <Button
-              style={{
-                textTransform: "capitalize",
-                marginRight: 16,
-                fontSize: 16,
-              }}
-            >
-              About
-            </Button>
-            <Button
-              style={{
-                textTransform: "capitalize",
-                marginRight: 16,
-                fontSize: 16,
-              }}
-            >
-              Service
-            </Button>
-            <Button
-              style={{
-                textTransform: "capitalize",
-                marginRight: 16,
-                fontSize: 16,
-              }}
-            >
-              Contact
-            </Button>
+            <Link to="About" smooth={true} duration={500}>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  marginRight: 16,
+                  fontSize: 16,
+                }}
+              >
+                About
+              </Button>
+            </Link>
+
+            <Link to="Service" smooth={true} duration={500}>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  marginRight: 16,
+                  fontSize: 16,
+                }}
+              >
+                Service
+              </Button>
+            </Link>
+            <Link to="Project" smooth={true} duration={500}>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  marginRight: 16,
+                  fontSize: 16,
+                }}
+              >
+                Project
+              </Button>
+            </Link>
+
+            <Link to="Contact" smooth={true} duration={500}>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  marginRight: 16,
+                  fontSize: 16,
+                }}
+              >
+                Contact
+              </Button>
+            </Link>
           </div>
           {/* section mobile */}
           <div className={classes.sectionMobile}>
@@ -119,29 +143,66 @@ const NavBar = () => {
           <Divider />
           <List component="nav" aria-label="main mailbox folders">
             <ListItem button>
-              <ListItemText primary="Home" />
+              <ListItemText
+                primary="Home"
+                onClick={() => {
+                  history.push("/");
+                  setOpen(false);
+                }}
+              />
             </ListItem>
           </List>
-          <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
-              <ListItemText primary="About" />
-            </ListItem>
-          </List>
-          <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
-              <ListItemText primary="Service" />
-            </ListItem>
-          </List>
-          <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
-              <ListItemText primary="Project" />
-            </ListItem>
-          </List>
-          <List component="nav" aria-label="main mailbox folders">
-            <ListItem button>
-              <ListItemText primary="Contact" />
-            </ListItem>
-          </List>
+
+          <Link to="About" smooth={true} duration={500}>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListItem
+                button
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <ListItemText primary="About" />
+              </ListItem>
+            </List>
+          </Link>
+
+          <Link to="Service" smooth={true} duration={500}>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListItem
+                button
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <ListItemText primary="Service" />
+              </ListItem>
+            </List>
+          </Link>
+
+          <Link to="Project" smooth={true} duration={500}>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListItem
+                button
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <ListItemText primary="Project" />
+              </ListItem>
+            </List>
+          </Link>
+          <Link to="Contact" smooth={true} duration={500}>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListItem
+                button
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <ListItemText primary="Contact" />
+              </ListItem>
+            </List>
+          </Link>
         </div>
       </Drawer>
     </>

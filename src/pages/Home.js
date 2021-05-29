@@ -13,6 +13,8 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { IconButton, Paper } from "@material-ui/core";
 import Typed from "react-typed";
 import { Helmet } from "react-helmet";
+import * as Scroll from "react-scroll";
+let Link = Scroll.Link;
 
 const Home = () => {
   return (
@@ -28,17 +30,16 @@ const Home = () => {
           <Grid item md={6}>
             <Typed
               style={{ fontSize: 45 }}
-              strings={["Hi I am Indal Kumar"]}
+              strings={["Hi I am Indal Yadav"]}
               typeSpeed={40}
               backSpeed={60}
               loop
             />
-            <Typography>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, sequi! Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Recusandae, qui. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Eligendi molestias non quibusdam,
-              tenetur esse illum aperiam dolore dolor illo beatae.
+            <Typography style={{ fontSize: 16 }}>
+              Hi there. Thanks for visiting my portfolio. I am Indal Yadav, I am
+              interested in creating something new using the latest
+              technologies. I always like to learn new technology and spreading
+              out knowledge among others.
             </Typography>
             <div
               style={{
@@ -47,8 +48,37 @@ const Home = () => {
                 marginTop: 50,
               }}
             >
-              <Button>Contact Me</Button>
-              <Button>Contact Me</Button>
+              <Link to="Contact" smooth={true} duration={500}>
+                <Button
+                  style={{
+                    backgroundColor: "red",
+                    color: "white",
+                    textTransform: "capitalize",
+                    fontSize: 16,
+                  }}
+                >
+                  Contact Me
+                </Button>
+              </Link>
+
+              <Button
+                style={{
+                  backgroundColor: "#005f99",
+                  textTransform: "capitalize",
+                }}
+              >
+                <a
+                  target="_blank"
+                  href="https://github.com/indalkumaryadav"
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    fontSize: 16,
+                  }}
+                >
+                  GitHub
+                </a>
+              </Button>
             </div>
           </Grid>
           <Grid item md={6}>
