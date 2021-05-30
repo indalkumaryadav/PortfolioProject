@@ -34,16 +34,18 @@ const ProjectCard = ({ image, description, sourceCodeLink, demo }) => {
               Git Hub
             </a>
           </Button>
-          <Button
-            style={{
-              textTransform: "capitalize",
-              fontSize: 16,
-            }}
-          >
-            <a target="_blank" href={demo} style={{ textDecoration: "none" }}>
-              Demo
-            </a>
-          </Button>
+          {demo && (
+            <Button
+              style={{
+                textTransform: "capitalize",
+                fontSize: 16,
+              }}
+            >
+              <a target="_blank" href={demo} style={{ textDecoration: "none" }}>
+                Demo
+              </a>
+            </Button>
+          )}
         </div>
       </CardActions>
     </Card>

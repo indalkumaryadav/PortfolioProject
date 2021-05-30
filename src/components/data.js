@@ -7,6 +7,8 @@ import GmailImg from "../images/gmail.png";
 import UltraImg from "../images/ultra.png";
 import EcommerceImg from "../images/ecommerce.png";
 import TodoImg from "../images/todo.png";
+import FaceBookImg from "../images/facebook.png";
+import SocialImg from "../images/social.png";
 
 export const skills = [
   {
@@ -44,6 +46,20 @@ export const skills = [
 ];
 
 export const projects = [
+  {
+    image: SocialImg,
+    description: "Django , ReactJs and Redux Social Media Clone Project",
+    sourceCodeLink:
+      "https://github.com/indalkumaryadav/DjangoReactProjects/tree/main/SocialMedia%20Project",
+    demo: "",
+  },
+  {
+    image: FaceBookImg,
+    description: "Django , ReactJs and Redux Facebook Clone Project",
+    sourceCodeLink:
+      "https://github.com/indalkumaryadav/DjangoReactProjects/tree/main/FaceBook%20Clone%20Project",
+    demo: "",
+  },
   {
     image: EcommerceImg,
     description: "Django and ReactJs ECommerce Project",
